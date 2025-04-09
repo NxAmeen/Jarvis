@@ -77,8 +77,44 @@ body{
     }
 }
 
-h5.text-light.text-center {
-    position: relative;
-    z-index: 10; /* Higher than the canvas and square */
-    color: white; /* Ensure visibility against the background */
+
+/* gpt codes */
+
+
+/* Center the square and its child elements in the middle of the viewport */
+#JarvisHood {
+    position: absolute; /* Use absolute positioning for full control */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px; /* Match the size of the square */
+    height: 400px; /* Match the size of the square */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the element's own dimensions */
+    z-index: 2; /* Ensure it's above the canvas */
+    flex-direction: column; /* Stack elements vertically */
 }
+
+/* Center the canvas (particle) inside the square */
+#canvasOne {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the element's own dimensions */
+    z-index: 1; /* Ensure it's below the square */
+}
+
+/* Move the text to the bottom of the viewport */
+h5.text-light.text-center {
+    position: absolute; /* Position it relative to the viewport */
+    bottom: 80px; /* Distance from the bottom of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for the element's width */
+    z-index: 10; /* Ensure it's above other elements */
+    color: white; /* Ensure visibility against the background */
+    text-align: center; /* Center the text */
+}
+
+
+/* gpt codes */
